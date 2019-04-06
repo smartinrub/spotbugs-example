@@ -1,0 +1,11 @@
+<FindBugsFilter>
+    <Match>
+        <Class name="com.sergiomartinrubio.spotbugsexample.StringConcatenation" />
+        <Bug category="PERFORMANCE" />
+    </Match>
+
+    <Match>
+        <Field type="java.lang.Integer" />
+        <Bug code="UuF" />
+    </Match>
+</FindBugsFilter>
