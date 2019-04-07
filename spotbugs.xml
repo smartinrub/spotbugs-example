@@ -1,11 +1,25 @@
 <FindBugsFilter>
     <Match>
-        <Class name="com.sergiomartinrubio.spotbugsexample.StringConcatenation" />
+        <Class name="com.sergiomartinrubio.spotbugsexample.PerformanceBugs" />
         <Bug category="PERFORMANCE" />
+    </Match>
+    <Match>
+        <Class name="com.sergiomartinrubio.spotbugsexample.CorrectnessBugs" />
+        <Not>
+            <Method name="test" />
+        </Not>
+    </Match>
+    <Match>
+        <Class name="com.sergiomartinrubio.spotbugsexample.BadPracticeBugs" />
+        <Or>
+            <Method name="removeAllFromCollection" returns="void" />
+            <Method name="NamingConvention" returns="void" />
+        </Or>
+        <Bug category="BAD_PRACTICE" />
     </Match>
 
     <Match>
-        <Field type="java.lang.Integer" />
-        <Bug code="UuF" />
+        <Package name="~.*\.spotbugsexample" />
+        <Bug pattern="UCF_USELESS_CONTROL_FLOW" />
     </Match>
 </FindBugsFilter>

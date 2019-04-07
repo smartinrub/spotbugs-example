@@ -1,8 +1,10 @@
 package com.sergiomartinrubio.spotbugsexample;
 
-public class StringConcatenation {
+public class PerformanceBugs {
 
-    public void runConcatenation() {
+    private Integer field;
+
+    public void stringContatenation() {
         String string = "example";
 
         String newString = "";
@@ -12,5 +14,10 @@ public class StringConcatenation {
         }
 
         System.out.println(newString);
+    }
+
+    public String stringConstructor() {
+        String string = new String("string");
+        return string;
     }
 }
